@@ -1,5 +1,4 @@
 "use strict";
-// Исправь ошибки которые будут в консоли, чтобы скрипт заработал.
 
 const inventory = {
   items: ["Knife", "Gas mask"],
@@ -17,7 +16,7 @@ const inventory = {
 
 const invokeInventoryAction = function (itemName, action) {
   console.log(`Invoking action on ${itemName}`);
-  action(itemName);
+  action.call(inventory, itemName);
 };
 
 invokeInventoryAction("Medkit", inventory.add);
